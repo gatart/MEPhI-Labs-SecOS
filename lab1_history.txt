@@ -1,0 +1,146 @@
+    1  history
+    2  cd /
+    3  ls
+    4  cd root/
+    5  sudo cd root/
+    6  su 
+    7  ls -la
+    8  mkdir .bash_history
+    9  history
+   10  cat .bash_history
+   11  rm .bash_history/
+   12  cd .bash_history/
+   13  ls
+   14  cd ..
+   15  rm -rf .bash_history/
+   16  history
+   17  cd .bash_history/
+   18  cat .bash_history
+   19  ls
+   20  vi text
+   21  reboot
+   22  whoami
+   23  whoamiiiii
+   24  whoaim
+   25  whoami
+   26  echo "Hello world"
+   27  date
+   28  cal
+   29  man cal
+   30  cal -3
+   31  history
+   32  clear
+   33  pwd
+   34  cd /
+   35  cd ..
+   36  pwd
+   37  ls
+   38  ls /var
+   39  cd ~
+   40  cd ..
+   41  ls
+   42  cd 
+   43  ls -l
+   44  mkdir fruits
+   45  cd /
+   46  mkdir ~/animals
+   47  touch /tmp/temp
+   48  cd ~/fruits/
+   49  touch apple, banana, pineapple, lion
+   50  ls
+   51  rm *,
+   52  ls
+   53  touch apple banana pineapple
+   54  touch ~/animals/cat.txt ~/animals/dog.txt ~/animals/elephant.txt
+   55  ls -l | grep apple | awk '{print $6,$7}'
+   56  ls
+   57  ls -l | grep "^apple" | awk '{print $6,$7}'
+   58  ls -l | awk '{print $9,$6,$7}' | grep "^apple" | awk '{print $2,$3}'
+   59  ls b*
+   60  ls "b$"
+   61  ls 'a$'
+   62  ls
+   63  ls '*a$'
+   64  ls a\$
+   65  ls a$
+   66  man ls
+   67  ls *a
+   68  ls [bi]*
+   69  ls *[bi]*
+   70  Do etogo vivodil tolko banana a ne vse kak nado
+   71  cp /etc/passwd ~
+   72  cat /etc/issue
+   73  cp /etc/issue apple
+   74  cat apple 
+   75  mv lion ~/animals/
+   76  mv pineapple pineaple 
+   77  mv pineaple pineapple 
+   78  wc -l /etc/passwd
+   79  cd
+   80  ln -s /etc/passwd passwd_link
+   81  ln .bash_history history_hard
+   82  bash
+   83  sudo yum update
+   84  sudo su
+   85  su
+   86  sudo yum update
+   87  su 
+   88  sudo vi text 
+   89  history
+   90  ln .bash_history history_hard
+   91  ls
+   92  ls -l
+   93  ls -la
+   94  rm ~/fruits/apple 
+   95  mkdir rmme
+   96  rmdir rmme/
+   97  rmdir fruits/
+   98  rm -rf fruits/
+   99  cat /etc/passwd /var/log/boot.log 
+  100  sudo cat /etc/passwd /var/log/boot.log 
+  101  cp /etc/init.d/ ~
+  102  cp -r /etc/init.d/ ~
+  103  rm -rf init.d/
+  104  cut -d: -f1 /etc/passwd
+  105  cut -d: -f1 /etc/passwd | sort 
+  106  vi passwd
+  107  cut -d: -f1,3,4 /etc/passwd | column -ts: | less
+  108  vi passwd
+  109  cut -d: -f1,3  /etc/passwd | sort 
+  110  grep :/bin/bash /etc/passwd | wc -l
+  111  grep :/bin/bash /etc/passwd | awk '{print $1}'
+  112  grep :/bin/bash /etc/passwd | cut -d: -f1
+  113  grep :/bin/bash /etc/passwd | cut -d: -f1 | sort -r
+  114  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | ???
+  115  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head -25
+  116  rpm -ql man-db | xargs -l du    2> /dev/null  | sort -n
+  117  top -b -n1
+  118  top -b -n1 | sort -k 12
+  119  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f11,5
+  120               ^ убирает   ^ отделяет  ^ "схлопывает"   ^ в 11 колонке - имя процесса,
+  121                заголовки      PID         пробелы        в 5 колонке - объём памяти
+  122  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f12,5
+  123  cat /etc/passwd | sort | tr ":" " "
+  124  cat /etc/passwd | sort | tr ":" " " | awk '{print $1,$7}'
+  125  sudo yum install -y git
+  126  cd /usr/share/doc/git/
+  127  ls
+  128  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head -5
+  129  cat user-manual.txt | tr -cs '[:alpha:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn | head -5
+  130  tr '[:lower:]' '[:upper:]' < user-manual.txt |  tr -d '[:punct:] \n\t' | fold -w1 | sort | uniq -c | sort -rn | head -5
+  131  tr -cs '[:alpha:]' '\n' < user-manual.txt | less | grep -E ........ | sort | uniq -c | sort -rn | head
+  132  ping ya.ru
+  133  curl wttr.in
+  134  hostname -I
+  135  curl ifconfig.me
+  136  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  137  cd
+  138  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  139  less README-ru.md 
+  140  sudo id
+  141  sudo less /var/log/messages
+  142  less /var/log/messages
+  143  su
+  144  history
+  145  cd Documents/MEPhI-Labs-SecOS/Lab_1/
+  146  history > lab1_history.txt
