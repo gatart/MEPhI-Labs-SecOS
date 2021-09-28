@@ -1,0 +1,54 @@
+Window 1 history:
+    1  clear
+    2  cd
+    3  mkdir test
+    4  cd test/
+    5  touch file
+    6  ls -l
+    7  sudo chmod 000 file
+    8  ls -l
+    9  echo "test" > file
+   10  cat file
+   11  sudo chmod 200 file
+   12  ll
+   13  echo "test" > file
+   14  cat file
+   15  sudo chmod g+r file
+   16  ll
+   17  cat file 
+   18  sudo chmod u+r file
+   19  ls -l
+   20  cat file 
+   21  mkdir dir
+   22  touch /dir/new_file
+   23  cd dir/
+   24  touch new_file
+   25  echo "file 2" > new_file
+   26  ls
+   27  cd ..
+   28  sudo chmod -x dir/
+   29  cat dir/new_file 
+   30  rm dir/new_file 
+   31  chown root:root file 
+   32  umask 177
+   33  touch file1
+   34  ll
+   35  umask 111
+   36  rm file1 
+   37  touch file1
+   38  ll
+   39  echo "Window 1 history:" >> ../Documents/MEPhI-Labs-SecOS/history.txt
+   40  history >> ../Documents/MEPhI-Labs-SecOS/history.txt
+Window 2 history:
+    1  sudo yum update
+    2  su
+    3  cd .git/
+    4  ls
+    5  nano config 
+    6  ls -la
+    7  cd
+    8  su
+    9  cat test/file
+   10  sudo chmod g+r test/file
+   11  cat test/file
+   12  history >> ./Documents/MEPhI-Labs-SecOS/history.txt 

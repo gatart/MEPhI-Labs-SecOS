@@ -1,0 +1,20 @@
+.:
+total 4
+drw-rw-r--. 2 labs labs 22 Sep 28 03:09 dir
+-rw-r-----. 1 root labs  5 Sep 28 03:06 file
+-rw-rw-rw-. 1 labs labs  0 Sep 28 03:27 file1
+
+./dir:
+total 0
+-????????? ? ? ? ?            ? new_file
+
+Output with sudo:
+.:
+total 4
+drw-rw-r--. 2 labs labs 22 Sep 28 03:09 dir
+-rw-r-----. 1 root labs  5 Sep 28 03:06 file
+-rw-rw-rw-. 1 labs labs  0 Sep 28 03:27 file1
+
+./dir:
+total 4
+-rw-rw-r--. 1 labs labs 7 Sep 28 03:10 new_file
