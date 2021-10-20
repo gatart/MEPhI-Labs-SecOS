@@ -1,0 +1,26 @@
+    1  ls -l /dev/sda{,[123]}
+    2  # Major nuber - first after "disk", Minor number - second. (5 column in output)
+    3  lsblk --list
+    4  # Obviously, since it's signed
+    5  cat /proc/diskstats
+    6   # First column - major num, second column - minor num
+    7  cat /proc/devices
+    8   # First column is major number which is also a driver associated with devise. There are many "sd" devices in output and all of them have different major nums. But the main driver is 8.
+    9  rm fs.img 
+   10  dd if=/dev/zero of=./fs.img bs=1M count=10
+   11  sudo losetup --find --show ./fs.img
+   12  sudo losetup --list
+   13  mkfs -t ext4 /dev/loop0
+   14  sudo mkfs -t ext4 /dev/loop0
+   15  sudo blkid /dev/loop0
+   16  sudo mount /dev/loop0 /mnt
+   17  sudo mount | grep /mnt
+   18  df -h /mnt
+   19  df -hi /mnt
+   20  sudo umount /dev/loop0
+   21  tune2fs -l /dev/loop0
+   22  sudo tune2fs -l /dev/loop0
+   23  sudo losetup --detach /dev/loop0 
+   24  sudo losetup --list 
+   25  history
+   26  history > ./Documents/MEPhI-Labs-SecOS/lab4.txt
