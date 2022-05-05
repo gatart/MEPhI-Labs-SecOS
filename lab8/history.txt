@@ -1,0 +1,79 @@
+    1  ldd /bin/login | grep pam
+    2  ll /lib64/libpam*
+    3  ll /lib64/security/
+    4  nano /etc/pam.d/system-auth
+    5  nano /etc/pam.d/su
+    6  nano /etc/pam.d/system-auth
+    7  nano /etc/pam.d/su
+    8  man su
+    9  man hostname
+   10  hostname
+   11  sudo nano /etc/pam.d/su
+   12  su -c "hostname mephi"
+   13  su
+   14  sudo nano /etc/pam.d/su
+   15  su -c "hostname mephi"
+   16  su
+   17  sudo nano /etc/pam.d/su
+   18  su
+   19  sudo nano /etc/pam.d/su
+   20  nano terminal-log.txt
+   21  sudo nano /etc/pam.d/su
+   22* 
+   23  sudo passwd lab8-user
+   24  sudo useradd -G wheel user1
+   25  sudo passwd user1
+   26  sudo nano /etc/pam.d/su
+   27  su user1
+   28  nano terminal-log.txt 
+   29  sudo useradd useless-user
+   30  sudo passwd useless-user
+   31  su useless-user
+   32  sudo nano /etc/pam.d/su
+   33  su useless-user
+   34  su user1
+   35  sudo nano /etc/pam.d/su
+   36  nano terminal-log.txt 
+   37  sudo nano /etc/pam.d/login
+   38  nano /etc/securetty
+   39  ls /etc
+   40  sudo touch /etc/securetty
+   41  su
+   42  nano /etc/securetty
+   43  su user1
+   44  sudo nano /etc/pam.d/login
+   45  sudo nano /etc/security/pwquality.conf
+   46  man pam_pwquality
+   47  sudo nano /etc/pam.d/system-auth
+   48  sudo passwd user1
+   49  sudo nano /etc/pam.d/system-auth
+   50  man pam_limits
+   51  sudo nano /etc/security/limits.conf
+   52  su user1
+   53  nano terminal-log.txt 
+   54  nano check_user.c
+   55  gcc check_user.c -o check_user -lpam -lpam_misc
+   56  sudo yum install pam-devel
+   57  cd /etc/yum.repos.d/
+   58  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+   59  sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+   60  sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+   61  sudo yum install pam-devel
+   62  ~
+   63  cd
+   64  ls
+   65  cd Documents/
+   66  ls
+   67  cd MEPhI-Labs-SecOS/lab8
+   68  ls
+   69  gcc check_user.c -o check_user -lpam -lpam_misc
+   70  sudo nano /etc/pam.d/check
+   71  ./check_user labs
+   72  nano terminal-log.txt 
+   73  ./check_user user1
+   74  nano check_user.c
+   75  gcc check_user.c -o check_user -lpam -lpam_misc
+   76  ./check_user labs
+   77  nano terminal-log.txt 
+   78  ./check_user labs
+   79  history > hystory.txt

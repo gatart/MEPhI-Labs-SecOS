@@ -1,0 +1,148 @@
+[labs@localhost lab8]$ ldd /bin/login | grep pam
+	libpam.so.0 => /lib64/libpam.so.0 (0x00007f5c5fd53000)
+	libpam_misc.so.0 => /lib64/libpam_misc.so.0 (0x00007f5c5fb4f000)
+[labs@localhost lab8]$ ll /lib64/libpam*
+lrwxrwxrwx. 1 root root    17 Dec  2  2020 /lib64/libpamc.so.0 -> libpamc.so.0.82.1
+-rwxr-xr-x. 1 root root 16480 Dec  2  2020 /lib64/libpamc.so.0.82.1
+lrwxrwxrwx. 1 root root    21 Dec  2  2020 /lib64/libpam_misc.so.0 -> libpam_misc.so.0.82.1
+-rwxr-xr-x. 1 root root 16536 Dec  2  2020 /lib64/libpam_misc.so.0.82.1
+lrwxrwxrwx. 1 root root    16 Dec  2  2020 /lib64/libpam.so.0 -> libpam.so.0.84.2
+-rwxr-xr-x. 1 root root 66424 Dec  2  2020 /lib64/libpam.so.0.84.2
+[labs@localhost lab8]$ ll /lib64/security/
+total 1988
+-rwxr-xr-x. 1 root root  20072 Dec  2  2020 pam_access.so
+-rwxr-xr-x. 1 root root  15680 Jun 15  2020 pam_cap.so
+-rwxr-xr-x. 1 root root  11704 Dec  2  2020 pam_chroot.so
+
+<Other results>
+
+[labs@localhost lab8]$ nano /etc/pam.d/system-auth
+[labs@localhost lab8]$ nano /etc/pam.d/su
+[labs@localhost lab8]$ nano /etc/pam.d/system-auth
+[labs@localhost lab8]$ nano /etc/pam.d/su
+[labs@localhost lab8]$ man su
+[labs@localhost lab8]$ man hostname
+[labs@localhost lab8]$ hostname
+localhost.localdomain
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[sudo] password for labs: 
+[labs@localhost lab8]$ su -c "hostname mephi"
+[labs@localhost lab8]$ su
+[root@mephi lab8]# exit
+exit
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[sudo] password for labs: 
+[labs@localhost lab8]$ su -c "hostname mephi"
+Password: 
+[labs@localhost lab8]$ su
+Password: 
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[labs@localhost lab8]$ su
+su: Authentication failure
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[sudo] password for labs: 
+[labs@localhost lab8]$ sudo useradd -G wheel lab8-user
+[labs@localhost lab8]$ sudo passwd lab8-user
+Changing password for user lab8-user.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+passwd: Authentication token manipulation error
+[labs@localhost lab8]$ sudo passwd lab8-user
+Changing password for user lab8-user.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[labs@localhost lab8]$ sudo useradd -G wheel user1
+[sudo] password for labs: 
+Sorry, try again.
+[sudo] password for labs: 
+[labs@localhost lab8]$ sudo passwd user1
+[sudo] password for labs: 
+Changing password for user user1.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[sudo] password for labs: 
+[labs@localhost lab8]$ su user1
+Password: 
+[user1@mephi lab8]$ su
+Password: 
+[root@mephi lab8]# exit
+exit
+[user1@mephi lab8]$ exit
+exit
+[labs@localhost lab8]$ sudo useradd useless-user
+[sudo] password for labs: 
+[labs@localhost lab8]$ sudo passwd useless-user
+Changing password for user useless-user.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[labs@localhost lab8]$ su useless-user
+Password: 
+[useless-user@mephi lab8]$ su
+Password: 
+su: Permission denied
+[useless-user@mephi lab8]$ exit
+exit
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[labs@localhost lab8]$ su useless-user
+Password: 
+[useless-user@mephi lab8]$ su
+su: Permission denied
+[useless-user@mephi lab8]$ exit
+exit
+[labs@localhost lab8]$ su user1
+Password: 
+[user1@mephi lab8]$ su
+Password: 
+[root@mephi lab8]# exit
+exit
+[user1@mephi lab8]$ exit
+exit
+[labs@localhost lab8]$ sudo nano /etc/pam.d/su
+[labs@localhost lab8]$ sudo nano /etc/pam.d/login
+[sudo] password for labs: 
+[labs@localhost lab8]$ sudo nano /etc/security/pwquality.conf
+[sudo] password for labs: 
+[labs@localhost lab8]$ man pam_pwquality
+[labs@localhost lab8]$ sudo nano /etc/pam.d/system-auth
+[labs@localhost lab8]$ sudo passwd user1
+[sudo] password for labs: 
+Sorry, try again.
+[sudo] password for labs: 
+Sorry, try again.
+[sudo] password for labs: 
+Changing password for user user1.
+New MEPhI password: 
+BAD PASSWORD: The password is shorter than 12 characters
+Retype new MEPhI password: 
+passwd: all authentication tokens updated successfully.
+[labs@localhost lab8]$ sudo passwd user1
+Changing password for user user1.
+New MEPhI password: 
+BAD PASSWORD: The password is shorter than 12 characters
+Retype new MEPhI password: 
+passwd: all authentication tokens updated successfully.
+[labs@localhost lab8]$ sudo nano /etc/pam.d/system-auth
+[labs@localhost lab8]$ man pam_limits
+[labs@localhost lab8]$ sudo nano /etc/security/limits.conf
+[labs@localhost lab8]$ gcc check_user.c -o check_user -lpam -lpam_misc
+[labs@localhost lab8]$ sudo nano /etc/pam.d/check
+[labs@localhost lab8]$ ./check_user labs
+Password: 
+Authenticated
+[labs@localhost lab8]$ nano check_user.c
+[labs@localhost lab8]$ gcc check_user.c -o check_user -lpam -lpam_misc
+[labs@localhost lab8]$ ./check_user labs
+Password: 
+Authenticated
+error code: Success
+
