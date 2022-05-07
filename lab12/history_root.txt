@@ -1,0 +1,41 @@
+    1  usermod -Ga wheel labs
+    2  usermod -aG wheel labs
+    3  reboot
+    4  cd 
+    5  cd /home/labs/
+    6  ls
+    7  chown root test/file
+    8  chmod go-r
+    9  chmod go-r test/file
+   10  ll test/
+   11  exit
+   12  systemctl --no-wall emergency
+   13  systemctl poweroff
+   14  rpm -i kernel-4.18.0-348.7.1.el8_5.src.rpm
+   15  exit
+   16   ls -dZ /etc
+   17  touch /etc/testfile
+   18  ls -lZ /etc/testfile
+   19  chcon -t httpd_sys_content_t /etc/testfile
+   20  chcon -R -t httpd_sys_content_t /etc/
+   21  touch testfile
+   22  ls -lZ testfile
+   23  chcon -t samba_share_t testfile
+   24  ls -lZ testfile
+   25  restorecon -v testfile
+   26  mkdir test
+   27  touch ./test/testfile{1,2,3}
+   28  ls -dZ test
+   29  ls -lZ test
+   30  chcon -R -t httpd_sys_content_t test/
+   31  ls -dZ test
+   32  ls -lZ test
+   33  restorecon -R -v test/
+   34  semanage fcontext -C -l
+   35  semanage fcontext -a -t httpd_sys_content_t testfile
+   36  restorecon -v testfile
+   37  mount server:/export /local/mount/point -o \ context="system_u:object_r:httpd_sys_content_t:s0"
+   38  mount /dev/sda2 /web/ -o defcontext="system_u:object_r:samba_share_t:s0"
+   39  mount server:/export /local/mount/point -o context="system_u:object_r:httpd_sys_content_t:s0"
+   40  mount server:/export/database /local/database -o context="system_u:object_r:mysqld_db_t:s0"
+   41  history > history_root.txt
