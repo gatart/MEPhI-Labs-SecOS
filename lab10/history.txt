@@ -1,0 +1,172 @@
+  404  yum repolist
+  405  yum grouplist
+  406  rpm -qa | less
+  407  rpm -qa | wc -l
+  408  yum list installed | less
+  409  rpm -qa | grep gnuplot
+  410  yum search gnuplot
+  411  yum info gnuplot
+  412  sudo yum install gnuplot
+  413  rpm -qi gnuplot
+  414  yum list installed gnuplot
+  415  rpm -ql gnuplot
+  416  rpm -qf /usr/bin/gnuplot-wx
+  417  yum deplist gnuplot
+  418  sudo rpm -e gnuplot-common
+  419  sudo yum remove gnuplot-common
+  420  cd lab10
+  421  sudo nano /etc/yum.repos.d/yandex.repo
+  422  sudo yum clean all
+  423  sudo yum repolist yandex
+  424  sudo yum install @development-tools rpmdev* rpm-sign
+  425  sudo yum install @'Development Tools' rpmdev* rpm-sign
+  426  rpmbuild
+  427  cd
+  428  rpmdev-setuptree
+  429  sudo yum install rpmdevtools
+  430  yum clean packages
+  431  sudo yum install @'Development Tools' rpmdev* rpm-sign
+  432  rpmbuild
+  433  sudo yum update
+  434  yum clean all
+  435  yum check
+  436  yum check-update
+  437  sudo yum update
+  438  dnf clean all
+  439  dnf check
+  440  dnf check-update
+  441  dnf update
+  442  sudo dnf update
+  443  sudo yum rpmbuild
+  444  sudo yum install rpmbuild
+  445  sudo yum install rpm-build
+  446  rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+  447  sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+  448  sudo yum update
+  449  sudo yum install rpm-build
+  450  cd /etc/yum.repos.d
+  451  sudo gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+  452  ls
+  453  cd ..
+  454  nano yum.repos.d
+  455  rpm -qa gpg-pubkey\*
+  456  rpm -qi gpg-pubkey-8483c65d-5ccc5b19
+  457  rmpbuild
+  458  rpmbuild
+  459  sudo rm /etc/yum.repos.d/yandex.repo 
+  460  sudo yum install rpm-build
+  461  sudo yum install @'Development Tools' rpmdev* rpm-sign
+  462  rpmbuild
+  463  ls
+  464  cd
+  465  clear
+  466  rpmdev-setuptree
+  467  ls
+  468  cd rpmbuild/SOURCES/
+  469  mkdir b19-515-16-1.0
+  470  cd b19-515-16-1.0/
+  471  nano b19-515-16
+  472  date
+  473  ls
+  474  sudo chmod +x b19-515-16 
+  475  cd ..
+  476  tar -cvzf b19-515-16-1.0.tar.gz b19-515-16-1.0
+  477  ls
+  478  cd ../SPECS
+  479  nano b19-515-16.spec
+  480  rpmbuild -ba b19-515-16
+  481  ls
+  482  rpmbuild -ba b19-515-16.spec
+  483  nano b19-515-16.spec
+  484  rpmbuild -ba b19-515-16.spec
+  485  nano b19-515-16.spec
+  486  rpmbuild -ba b19-515-16.spec
+  487  ls
+  488  cd ..
+  489  ls
+  490  cd SOURCES/
+  491  ls
+  492  cd b19-515-16-1.0/
+  493  nano b19-515-16 
+  494  rm *.tar.gz
+  495  ls
+  496  cd ..
+  497  rm *.tar.gz
+  498  tar -cvzf b19-515-16-1.0.tar.gz b19-515-16-1.0
+  499  cd ../SPECS
+  500  rpmbuild -ba b19-515-16.spec
+  501  cd ../SOURCES/
+  502  mkdir c-b19-515-16-1.0
+  503  cd c-b19-515-16-1.0/
+  504  nano c-b19-515-16.c
+  505  cd ..
+  506  ls
+  507  tar -cvzf c-b19-515-16-1.0.tar.gz c-b19-515-16-1.0
+  508  cd ../SPECS
+  509  cp b19-515-16.spec c-b19-515-16.spec 
+  510  ls
+  511  nano c-b19-515-16.spec 
+  512  rpmbuild -ba c-b19-515-16.spec
+  513  nano c-b19-515-16.spec 
+  514  rpmbuild -ba c-b19-515-16.spec
+  515  nano c-b19-515-16.spec 
+  516  rpmbuild -ba c-b19-515-16.spec
+  517  nano c-b19-515-16.spec 
+  518  rpmbuild -ba c-b19-515-16.spec
+  519  sudo apt install libc
+  520  sudo yum install libc
+  521  nano c-b19-515-16.spec 
+  522  rpmbuild -ba c-b19-515-16.spec
+  523  nano c-b19-515-16.spec 
+  524  rpmbuild -ba c-b19-515-16.spec
+  525  ll ~/rpmbuild/SRPMS/
+  526  nano c-b19-515-16.spec 
+  527  rpmbuild -ba c-b19-515-16.spec
+  528  gpg2 --gen-key
+  529  sudo yum install heveged
+  530  sudo yum install haveged
+  531  sudo systemctl enable haveged
+  532  sudo yum install haveged
+  533  sudo yum makecache
+  534  sudo yum -y install haveged
+  535  sudo dnf -y install haveged
+  536  sudo yum install epel-release
+  537  sudo yum -y install haveged
+  538  sudo systemctl enable haveged
+  539  sudo systemctl start haveged
+  540  gpg2 --gen-key
+  541  gpg2 --export -a 'Talamanov George' > ~/rpmbuild/RPM-GPG-KEY-Talamanov-George
+  542  sudo nano ~/.rpmmacros
+  543  rpm --addsign ~/rpmbuild/RPMS/*/*.rpm
+  544  sudo yum install createrepo
+  545  sudo mkdir -p /var/www/html/myrepo
+  546  sudo cp ~/rpmbuild/RPMS/*/*.rpm /var/www/html/myrepo
+  547  sudo cp ~/rpmbuild/RPM-GPG-KEY-Talamanov-George /var/www/html/myrepo
+  548  sudo createrepo -v /var/www/html/myrepo
+  549  sudo nano /etc/yum.repos.d/my.repo
+  550  sudo yum install -y httpd
+  551  sudo systemctl enable httpd.service
+  552  sudo systemctl start httpd.service
+  553  yum repolist
+  554  sudo yum install c-b19-515-16 b19-515-16
+  555  reboot
+  556  history
+  557  sudo systemctl enable httpd.service
+  558  sudo systemctl start httpd.service
+  559  sudo createrepo -v /var/www/html/myrepo
+  560  yum repolist
+  561  sudo yum install c-b19-515-16 b19-515-16
+  562  ls /var/www/html/myrepo
+  563  sudo nano /etc/selinux/config
+  564  getenforce
+  565  sudo createrepo -v /var/www/html/myrepo
+  566  sudo nano /etc/yum.repos.d/my.repo
+  567  sudo systemctl stop httpd.service
+  568  sudo systemctl enable httpd.service
+  569  sudo systemctl disable httpd.service
+  570  sudo systemctl enable httpd.service
+  571  sudo systemctl start httpd.service
+  572  yum repolist
+  573  sudo yum install c-b19-515-16 b19-515-16
+  574  c-b19-515-16
+  575  b19-515-16
