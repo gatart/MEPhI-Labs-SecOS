@@ -1,0 +1,99 @@
+  333  systemctl -t help
+  334  systemctl status
+  335  systemctl --type=service
+  336  systemctl status auditd.service
+  337  systemctl status polkit.service
+  338  systemctl is-active auditd.service
+  339  systemctl is-active polkit.service
+  340  systemctl is-enabled auditd.service
+  341  systemctl is-enabled polkit.service
+  342  systemctl list-dependencies --after auditd.service
+  343  systemctl list-dependencies --after polkit.service
+  344  systemctl list-dependencies --before auditd.service
+  345  systemctl list-dependencies --before polkit.service
+  346  systemctl list-units --type=service
+  347  systemctl list-units --type=service --all
+  348  systemctl list-units --type=socket --all
+  349  systemctl list-units --type=device --all
+  350  systemctl list-units --type=automount --all
+  351  systemctl list-units --type=swap --all
+  352  systemctl list-unit-files --type=service
+  353  systemctl list-unit-files --type=automount --all
+  354  systemctl --failed --type=service
+  355  systemctl --failed --type=automount
+  356  curl 127.0.0.1
+  357  systemctl status httpd.service
+  358  systemctl start httpd.service
+  359  sudo yum update -y
+  360  sudo yum install httpd -y
+  361  syste
+  362  systemctl status httpd.service
+  363  curl 127.0.0.1
+  364  systemctl start httpd.service
+  365  systemctl status httpd.service
+  366  systemctl restart httpd.service
+  367  systemctl status httpd.service
+  368  systemctl stop httpd.service
+  369  systemctl enable httpd.service
+  370  systemctl status httpd.service
+  371  systemctl start httpd.service
+  372  systemctl status httpd.service
+  373  systemctl disable httpd.service
+  374  systemctl mask httpd.service
+  375  systemctl status httpd.service
+  376  systemctl stop httpd.service
+  377  systemctl start httpd.service
+  378  systemctl unmask httpd.service
+  379  systemctl list-units --type=target
+  380  systemctl list-units --type=target --all
+  381  systemctl get-default
+  382  ls -l /etc/systemd/system/default.target
+  383  systemctl set-default multi-user.target
+  384  systemctl isolate multi-user.target
+  385  sudo systemctl set-default multi-user.target
+  386  systemctl reboot
+  387  sudo systemctl set-default graphical.target
+  388  systemctl reboot
+  389  cd Documents/MEPhI-Labs-SecOS/lab9
+  390  history
+
+  388  systemctl reboot
+  389  systemctl --no-wall rescue
+  390  systemctl halt
+  391  systemctl hibernate
+  392  hostnamectl
+  393  timedatectl
+  394  localectl
+  395  loginctl 
+  396  loginctl session-status 2
+  397  loginctl show-user user1
+
+  402  cd /etc/systemd/system
+  403  ls
+  404  sudo nano mephi.service
+  405  ls
+  406  ls -l
+  407  man ls
+  408  ls -lZ mephi.service
+  409  sudo chmod +x mephi.service 
+  410  ls -lZ mephi.service
+
+    1  journalctl -b
+    2  ausearch -m avc -ts recent
+    3  sudo ausearch -m avc -ts recent
+    4  restorecon -v mephi.service
+    5  sudo mv mephi.service /usr/lib/systemd/system/mephi.service
+    6  restorecon -v mephi.service
+    7  cd /usr/lib/systemd/system
+    8  restorecon -v mephi.service
+    9  sudo restorecon -v mephi.service
+   10  systemctl start mephi.service
+   11  journalctl -u mephi.service
+   12  sudo nano mephi.path
+   13  systemctl enable mephi.path
+   14  systemctl start mephi.path
+   15  touch /tmp/mephi.file
+
+    3  journalctl -f -u mephi
+    4  nano terminal-log.txt
+    5  history

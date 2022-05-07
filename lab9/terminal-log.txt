@@ -1,0 +1,39 @@
+[labs@localhost system]$ sudo ausearch -m avc -ts recent
+<no matches>
+[labs@localhost system]$ restorecon -v mephi.service
+[labs@localhost system]$ sudo mv mephi.service /usr/lib/systemd/system/mephi.service
+[labs@localhost system]$ restorecon -v mephi.service
+restorecon: lstat(/etc/systemd/system/mephi.service) failed: No such file or directory
+[labs@localhost system]$ cd /usr/lib/systemd/system
+[labs@localhost system]$ restorecon -v mephi.service
+[labs@localhost system]$ sudo restorecon -v mephi.service
+[labs@localhost system]$ systemctl start mephi.service
+[labs@localhost system]$ journalctl -u mephi.service
+-- Logs begin at Fri 2022-05-06 23:01:28 PDT, end at Sat 2022-05-07 03:05:44 PDT. --
+May 07 03:05:41 localhost.localdomain systemd[1]: /usr/lib/systemd/system/mephi.service:2: Unknown lval>
+May 07 03:05:43 localhost.localdomain systemd[1]: /usr/lib/systemd/system/mephi.service:2: Unknown lval>
+May 07 03:05:43 localhost.localdomain systemd[1]: Started mephi.service.
+May 07 03:05:43 localhost.localdomain systemd[1]: mephi.service: Succeeded.
+May 07 03:05:43 localhost.localdomain printf[7335]: Hello, MEPhI!
+
+[labs@localhost system]$ sudo nano mephi.path
+[sudo] password for labs: 
+[labs@localhost system]$ systemctl enable mephi.path
+Created symlink /etc/systemd/system/multi-user.target.wants/mephi.path → /usr/lib/systemd/system/mephi.path.
+[labs@localhost system]$ systemctl start mephi.path
+[labs@localhost system]$ touch /tmp/mephi.file
+
+
+Second terminal:
+
+[labs@localhost lab9]$ journalctl -f -u mephi
+-- Logs begin at Fri 2022-05-06 23:01:28 PDT. --
+May 07 03:05:41 localhost.localdomain systemd[1]: /usr/lib/systemd/system/mephi.service:2: Unknown lvalue 'Decription' in section 'Unit'
+May 07 03:05:43 localhost.localdomain systemd[1]: /usr/lib/systemd/system/mephi.service:2: Unknown lvalue 'Decription' in section 'Unit'
+May 07 03:05:43 localhost.localdomain systemd[1]: Started mephi.service.
+May 07 03:05:43 localhost.localdomain systemd[1]: mephi.service: Succeeded.
+May 07 03:05:43 localhost.localdomain printf[7335]: Hello, MEPhI!
+May 07 03:13:04 localhost.localdomain systemd[1]: /usr/lib/systemd/system/mephi.service:2: Unknown lvalue 'Decription' in section 'Unit'
+May 07 03:13:52 localhost.localdomain systemd[1]: Started mephi.service.
+May 07 03:13:52 localhost.localdomain printf[7619]: Hello, MEPhI!
+May 07 03:13:52 localhost.localdomain systemd[1]: mephi.service: Succeeded.
