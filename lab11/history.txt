@@ -1,0 +1,45 @@
+    1  uname -r
+    2  rpmdev-setuptree
+    3  yumdownloader --source kernel
+    4  rpm -i kernel-3.10.0-514.16.1.el7.centos.plus.src.rpm
+    5  rpm -i kernel-4.18.0-348.7.1.el8_5.centos.plus.src.rpm
+    6  rpm -i kernel-4.18.0-348.7.1.el8_5.src.rpm
+    7  sudo rpm -i kernel-4.18.0-348.7.1.el8_5.src.rpm
+    8  su 
+    9  ls rpmbuild/SPECS/
+   10  sudo ls rpmbuild/SPECS/
+   11  cd ..
+   12  cd
+   13  ls
+   14  sudo ls rpmbuild/SPECS/
+   15  ls rpmbuild/SOURCES/
+   16  rpmbuild -bs ~/rpmbuild/SPECS/kernel.spec
+   17  ls ~/rpmbuild/SRPMS/
+   18  yum-builddep /home/labs/rpmbuild/SRPMS/kernel-4.18.0-348.7.1.el8.src.rpm 
+   19  sudo yum-builddep /home/labs/rpmbuild/SRPMS/kernel-4.18.0-348.7.1.el8.src.rpm 
+   20  sudo yum install dwarves libbabeltrace-devel libbpf-devel
+   21  sudo yum install dwarves
+   22  sudo yum install autoconf automake bison elfutils-libelf-devel flex ftp gcc gcc-c++ libtool make ncurses-devel openssl-devel rpmdevtools
+   23  sudo yum-builddep /home/labs/rpmbuild/SRPMS/kernel-4.18.0-348.7.1.el8.src.rpm 
+   24  sudo dnf builddep kernel.spec
+   25  sudo dnf builddep ./rpmbuild/SPECS/kernel.spec
+   26  sudo yum install powertool
+   27  sudo yum install powertools
+   28  sudo dnf makecache --refresh
+   29  sudo dnf -y install dwarves
+   30  yum repolist
+   31  sudo nano /etc/yum.repos.d/CentOS-PowerTools.repo
+   32  sudo dnf config-manager --set-enabled powertools
+   33  sudo dnf -y install dwarves
+   34  sudo ydnf install dwarves libbabeltrace-devel libbpf-devel
+   35  sudo dnf install libbabeltrace-devel libbpf-devel
+   36  sudo yum-builddep /home/labs/rpmbuild/SRPMS/kernel-4.18.0-348.7.1.el8.src.rpm 
+   37  rpmbuild -bp --target=$(uname -m) rpmbuild/SPECS/kernel.spec
+   38  cd rpmbuild/BUILD/kernel*/linux*
+   39  ls ~/rpmbuild/BUILD/kernel-3.10.0-514.16.1.el7/linux-3.10.0-514.16.1.el7.centos.plus.efanov.x86_64/
+   40  ls ~/rpmbuild/BUILD/
+   41  ls ~/rpmbuild/BUILD/kernel-4.18.0-348.7.1.el8_5/
+   42  ls ~/rpmbuild/BUILD/kernel-4.18.0-348.7.1.el8_5/linux-4.18.0-348.7.1.el8.x86_64/
+   43  history
+   44  cd ~/Documents/MEPhI-Labs-SecOS/lab11
+   45  history > history.txt
