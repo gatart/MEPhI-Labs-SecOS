@@ -1,0 +1,5 @@
+[swap-control-repo]
+name=swap-control-repo
+baseurl=http://localhost/swap-control-repo
+enabled=1
+gpgkey=http://localhost/swap-control-repo/RPM-GPG-KEY-Talamanov-George

@@ -1,0 +1,10 @@
+'\"t
+.TH "swap-control" "8" "23\ \&MAY\ \&2022" "swap-control 1.0" "swap control service" 
+.SH "NAME"
+swap-control
+.SH "DESCRIPTION"
+\fBswap-control\fR - carries out monitoring of a condition of the swap file each 30 seconds.This service will double size of swap file if existing swap file is filled more than a half.  Log file can be seen in ~/swap-control.log.
+.SH "AUTHOR"
+Talamanov George
+.SH NOTIFICATIONS
+Status of service can be seen when service received signal USR1.

@@ -1,0 +1,1 @@
+/bin/swap-control.sh	--	gen_context(system_u:object_r:swap_control_exec_t,s0)

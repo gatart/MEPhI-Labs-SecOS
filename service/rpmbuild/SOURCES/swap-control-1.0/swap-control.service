@@ -1,0 +1,13 @@
+[Unit]
+Description=Swap control service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swap-control
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+

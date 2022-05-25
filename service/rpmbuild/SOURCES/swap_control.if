@@ -1,0 +1,40 @@
+
+## <summary>policy for swap_control</summary>
+
+########################################
+## <summary>
+##	Execute swap_control_exec_t in the swap_control domain.
+## </summary>
+## <param name="domain">
+## <summary>
+##	Domain allowed to transition.
+## </summary>
+## </param>
+#
+interface(`swap_control_domtrans',`
+	gen_require(`
+		type swap_control_t, swap_control_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, swap_control_exec_t, swap_control_t)
+')
+
+######################################
+## <summary>
+##	Execute swap_control in the caller domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`swap_control_exec',`
+	gen_require(`
+		type swap_control_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	can_exec($1, swap_control_exec_t)
+')

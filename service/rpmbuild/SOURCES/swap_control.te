@@ -1,0 +1,26 @@
+policy_module(swap_control, 1.0.0)
+
+########################################
+#
+# Declarations
+#
+
+type swap_control_t;
+type swap_control_exec_t;
+init_daemon_domain(swap_control_t, swap_control_exec_t)
+
+permissive swap_control_t;
+
+########################################
+#
+# swap_control local policy
+#
+allow swap_control_t self:fifo_file rw_fifo_file_perms;
+allow swap_control_t self:unix_stream_socket create_stream_socket_perms;
+allow swap_control_t self:process { signal };
+
+domain_use_interactive_fds(swap_control_t)
+
+files_read_etc_files(swap_control_t)
+
+miscfiles_read_localization(swap_control_t)
